@@ -23,7 +23,7 @@ In a previous Filemaker verion, from an HTML page, we were able to link to a:
 Now the only options available are linking to a database, or linking to a database and running a script.
 
 ### Prerequisites
-1. FileMaker Advanced 16,17, or 18
+1. FileMaker Pro Advanced 16,17, or 18
 2. Basic knowledge on JavaScript, HTML, CSS
 3. Basic FileMaker knowledge
 
