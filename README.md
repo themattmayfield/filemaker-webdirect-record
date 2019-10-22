@@ -147,3 +147,34 @@ function x() {
   });
 
 ```
+3. Create a new HTML page. 
+- as you can see in my example above I called it WebDirect.html
+- when the user clicks submit with a valid email in the login.html, the JavaScript page will get the Filemaker ID associated with that email, and pass it to the new HTML page we just created.
+- what this page does is it sets the ID to a new variable, and we set the form action to go to the correct script where FIleMaker will be able to go to the correct record. Then automatically submits the form.
+- we discussed everything about scripts earlier assuming you read if not click HERE.
+- 
+```html
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+
+<form id="myForm" method="post">
+  <input type="hidden" name="user" value="admin" />
+<input type="hidden" name="pwd" value="admin" />
+</form>
+
+
+<script type="text/javascript">
+var id = localStorage.getItem("id");
+document.getElementById('myForm').action = ("<YOUR HOST>/fmi/data/v1/databases/<YOUR DATABASE>?script=<YOUR FILEMAKER SCRIPTNAME>&param=" + id);
+document.getElementById('myForm').submit();
+</script>
+
+  </body>
+</html>
+
+```
