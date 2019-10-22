@@ -55,7 +55,8 @@ The most common reason someone wants to go to a specific record from an HTML pag
 - this form has an email input and a submit button. Notice the form does not have an action or method.
 - also I have a script that includes a JavaScript file. Your path and name of file can be whatever you like, but do create a JavaScript file and include it.
 
-2. 
+2. Below is what goes in the javascript file you just created. There are a few things I want to explain that took me a while to figure out.
+- 
 
 ```javascript
 //---// Data needed to Create SESSION. IMPORTANT to pull token from response //---//
