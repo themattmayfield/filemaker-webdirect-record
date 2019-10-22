@@ -163,7 +163,7 @@ function x() {
 - as you can see in my example above I called it WebDirect.html
 - when the user clicks submit with a valid email in the login.html, the JavaScript page will get the Filemaker ID associated with that email, and pass it to the new HTML page we just created.
 - what this page does is it sets the ID to a new variable, and we set the form action to go to the correct script where FIleMaker will be able to go to the correct record. Then automatically submits the form.
-- we discussed everything about scripts earlier assuming you read if not click HERE.
+- we discussed everything about scripts earlier assuming you read if not click [HERE](#How-to-go-to-a-specific-record-in-Filemaker-WebDirect-from-an-HTML-page).
 
 ```html
 <!DOCTYPE html>
