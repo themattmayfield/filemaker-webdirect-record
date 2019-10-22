@@ -31,5 +31,9 @@ https://fmhelp.filemaker.com/docs/18/en/fmwd/#accessing_linking
   
 3. In Filemaker go to script you created.
 - below is an image of what should go into your script.
+- you can change and manipulate to match your environment, and situation, but this is a basic outline.
 ![Script](/go_to_record.png)
 
+4. As you can see this will get your id parameter from the url and go to that record.
+
+# How to get a users ID into the url to pass to filemaker.
