@@ -55,75 +55,78 @@ The most common reason someone wants to go to a specific record from an HTML pag
 - this form has an email input and a submit button. Notice the form does not have an action or method.
 - also I have a script that includes a JavaScript file. Your path and name of file can be whatever you like, but do create a JavaScript file and include it.
 
-2. Below is what goes in the javascript file you just created. There are a few things I want to explain that took me a while to figure out. So PLEASE READ
+2. Below is what goes in the javascript file you just created. I have solid comments within the code, but there are a few things I want to explain that took me a while to figure out. So PLEASE READ
 - where we create the variable session, make sure you fill out the url properly with the host being prefixed with "https://".
 - also in session.Authorization it is going to have the work Basic followed by the base64-encoded string of your account name and password of the database sepereated by a colon which looks like... "Basic accountname:password". So if your account name is "admin" and your password is "admin" your authorization should look like below. You can find out the base64-encoded string of your account name and password by some online converter. Documentation of this is in the FileMaker 18 DATA API Guide https://fmhelp.filemaker.com/docs/18/en/dataapi/#connect-database_log-in
--
+- when creating a session, we use the authorization that uses Basic accountName:password like we talked about, but when getting a range of records, we use a token. We are going to get the token from the response we get when we create the session, and insert it into the variable we will create to get the range of records.
 
 ```javascript
 //---// Data needed to Create SESSION. IMPORTANT to pull token from response //---//
+//---// Fill in with correct FileMaker Credentials //---//
 var session = {
-  "url": "https://ws.skdata.cloud/fmi/data/v1/databases/WSdummydb/sessions",
+  "url": "<YOUR HOST>/fmi/data/v1/databases/<YOUR DATABASE>/sessions",
   "method": "POST",
   "headers": {
     "Content-Type": "application/json",
-    "Authorization": "Basic YWRtaW46YWRtaW4="
+    "Authorization": "Basic YWRtaW46YWRtaW4=" //this is if your username and password are both admin
   }
 }
-
+//--// When the user clicks submit, it will execute this code. //--//
 $( "form" ).submit(function( event ) {
-  // console.log( $( this ).serializeArray() );
-  event.preventDefault();
 
+//stops form from doing normal form duties
+event.preventDefault();
+
+//simple function for if you have more form data, so you call this funciton
+//whenever you set a variable to what the user input.
+//it incrememnts to the next piece of data.
 var num = 0
 function x() {
   return num++;
 
-
 }
+
+// sets a new variable email to the value the user typed in.
+//called the funciton x() so it gets the first data in the form.
+//call whenever there is more form data.
   var email = $( this ).serializeArray()[x()].value;
-  // var password = $( this ).serializeArray()[x()].value;
 
-
-
-
-  // console.log(email);
-  // console.log(password);
 
   //---// Ajax makes request and gives response then pulls token from response) //---//
   $.ajax(session).done(function (response) {
     token = (response.response.token);
 
   //---// Data needed to GET records //---//
-    var customerList = {
-      "url": "https://ws.skdata.cloud/fmi/data/v1/databases/WSdummydb/layouts/CustomerDetails/records",
+    var records = {
+      "url": "<YOUR HOST>/fmi/data/v1/databases/<YOUR DATABASE>/layouts/<YOUR LAYOUT>/records",
       "method": "Get",
       "headers": {
         "Content-Type": "application/json"
 
       }
     }
-  //---// Insert correct Authorization into header of eventRecords "Bearer token" //---//
-  customerList.headers.Authorization = "Bearer " + token;
+  //---// Insert correct Authorization into header of RECORDS "Bearer token" //---//
+  records.headers.Authorization = "Bearer " + token;
 
-  //---// Ajax makes request for Event records) //---//
-    $.ajax(customerList).done(function (response) {
+  //---// Ajax makes request for records) //---//
+    $.ajax(records).done(function (response) {
+      //Set variable data to all FIleMaker data we got
       var data = (response.response.data)
 
-
+      // loop to see if email exist within the FIleMaker records 
     for (var i = 0; i < data.length; i++) {
+      //if email exist we execute code
       if (email.toUpperCase() == data[i].fieldData.Email.toUpperCase() ) {
-        // console.log(data[i].fieldData.Email);
+      //set variable id to the FIleMaker RecordID associated with that email
         var id = response.response.data[i].recordId;
-        // console.log("RecordID = " + id);
 
-        // localStorage.setItem("id",id);
-        // window.open("./page.html", "_self");
-
+      //store the id ans essentially send it to the new webpage we will open.
         localStorage.setItem("id",id);
-        window.open("./CustomerWebDirect.html", "_self")
+        //open a new HTML that will get the id to send to webdirect.
+        window.open("./WebDirect.html", "_self")
         break;
       }
+      //if email does not exist, it will give an error message.
       else {
         console.log("nope");
         if(i == data.length - 1){
