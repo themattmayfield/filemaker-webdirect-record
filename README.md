@@ -10,7 +10,7 @@ TheMinimalDeveloper(Tdm)
 - [How to go to a specific record in Filemaker WebDirect from an HTML page](#How-to-go-to-a-specific-record-in-Filemaker-WebDirect-from-an-HTML-page)
   - [Basic Steps](#Basic-Steps)
 - [How to get a users ID into the url to pass to filemaker](#How-to-get-a-users-ID-into-the-url-to-pass-to-filemaker)
-  - [Things to keep in mind (IMPORTANT)](#Things-to-keep-in-mind(IMPORTANT))
+  - [Things to keep in mind IMPORTANT](#Things-to-keep-in-mind-IMPORTANT)
   - [Steps to get a users ID into the url to pass to filemaker](#Steps-to-get-a-users-ID-into-the-url-to-pass-to-filemaker)
   
 ### What this solves?
@@ -52,7 +52,7 @@ https://fmhelp.filemaker.com/docs/18/en/fmwd/#accessing_linking
 The most common reason someone wants to go to a specific record from an HTML page is that they have a login form and wants the user that logs in to go straight to the FileMaker record specific to them.
 ###### So Let's Do That.
 
-### Things to keep in mind(IMPORTANT).
+### Things to keep in mind IMPORTANT.
 1. We are only going to be using email to login the user. You can use the same logic to sign them in with email and pass, or whatever credentials of your choosing, but for now we will use just email.
 2. When a user logs in, they access the FileMaker database using the credentials of that privilege set. So if necessary, create a guest account with a limited privilage set.
 3. I will not be going over how to make this more secure, that is on you. However with that being said, FileMaker has made this very secure already.
