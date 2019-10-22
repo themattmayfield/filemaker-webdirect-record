@@ -30,8 +30,10 @@ First I will give the basic steps needed to go to a specific record from an HTML
 ### Basic Steps
 1. In Filemaker go to Manage Scripts / Scripts Workspace and create a new script.
 
-2. In Filemaker go to Manage Database and create a new field in the table associated with your layout. Call The field is just going to be a duplicate of the RecordID. Here is exactly what it should look like, but you can call the field whatever you liker.
+2. In Filemaker go to Manage Database and create a new field in the table associated with your layout. Call The field is just going to be a duplicate of the RecordID. Here is exactly what it should look like, but you can call the field whatever you like:
+
 ![Script](/img/database_field.png)
+
 
 3. In your HTML page, link to the newly created Filemaker script:
 - this is how the link is set up. 
