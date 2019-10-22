@@ -1,6 +1,9 @@
 # FileMaker WebDirect Record
 This is so far the easiest way to go to a specific record in FileMaker WebDirect from web application using Javascript.
 
+## Table of Contents
+[What this solves?](#what-this-soves)
+
 ## What this solves?
 In a previous Filemaker verion, from an HTML page, we were able to link to a:
 - specific database
