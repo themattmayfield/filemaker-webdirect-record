@@ -32,7 +32,7 @@ https://fmhelp.filemaker.com/docs/18/en/fmwd/#accessing_linking
 3. In Filemaker go to script you created.
 - below is an image of what should go into your script.
 - you can change and manipulate to match your environment, and situation, but this is a basic outline.
-![Script](/go_to_record.png)
+![Script](/img/go_to_record.png)
 
 4. As you can see this will get your id parameter from the url and go to that record.
 
@@ -49,4 +49,4 @@ The most common reason someone wants to go to a specific record from an HTML pag
 1. Create a form.
 - Like I said in the Thing to keep in mind section, I will only be using email because I am lazy.
 - Very basic example below:
-![Script](/login.png)
+![login.png](/img/login.png)
