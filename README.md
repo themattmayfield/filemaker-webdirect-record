@@ -2,9 +2,10 @@
 This is so far the easiest way to go to a specific record in FileMaker WebDirect from web application using Javascript.
 
 ## Table of Contents
-[What this solves?](#what-this-soves)
+[What this solves?](#what-this-solves)
+[Prerequisites](#Prerequisites)
 
-## What this solves?
+### What this solves?
 In a previous Filemaker verion, from an HTML page, we were able to link to a:
 - specific database
 - specific database, and layout,
@@ -13,15 +14,15 @@ In a previous Filemaker verion, from an HTML page, we were able to link to a:
 
 Now the only options available are linking to a database, or linking to a database and running a script.
 
-## Prerequisites
+### Prerequisites
 1. FileMaker Advanced 16,17, or 18
 2. Basic knowledge on JavaScript, HTML, CSS
 3. Basic FileMaker knowledge
 
-# How to go to a specific record in Filemaker WebDirect from an HTML page
+## How to go to a specific record in Filemaker WebDirect from an HTML page
 First I will give the basic steps needed to go to a specific record from an HTML page, then I will give a couple of examples incase you are using a FORM.
 
-## Basic Steps
+### Basic Steps
 1. In Filemaker go to Manage Scripts / Scripts Workspace and create a new script.
 
 2. In your HTML page, link to the newly created Filemaker script:
@@ -39,16 +40,16 @@ https://fmhelp.filemaker.com/docs/18/en/fmwd/#accessing_linking
 
 4. As you can see this will get your id parameter from the url and go to that record.
 
-# How to get a users ID into the url to pass to filemaker.
+## How to get a users ID into the url to pass to filemaker.
 The most common reason someone wants to go to a specific record from an HTML page is that they have a login form and wants the user that logs in to go straight to the FileMaker record specific to them.
 ###### So Let's Do That.
 
-## Things to keep in mind.
+### Things to keep in mind.
 1. We are only going to be using email to login the user. You can use the same logic to sign them in with email and pass, or whatever credentials of your choosing, but for now we will use just email.
 2. When a user logs in, they access the FileMaker database using the credentials of that privilege set. So if necessary, create a guest account with a limited privilage set.
 3. I will not be going over how to make this more secure, that is on you. However with that being said, FileMaker has made this very secure already.
 
-## Steps to get a users ID into the url to pass to filemaker.
+### Steps to get a users ID into the url to pass to filemaker.
 1. Create a form.
 - like I said in the Thing to keep in mind section, I will only be using email because I am lazy.
 - here is a very basic example:
