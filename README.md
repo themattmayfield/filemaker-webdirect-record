@@ -51,4 +51,93 @@ The most common reason someone wants to go to a specific record from an HTML pag
 - here is a very basic example:
 ![login.png](/img/login.png)
 
+- keep in mind you can name your html page whatever you like this is just an example.
+- this form has an email input and a submit button. Notice the form does not have an action or method.
+- also I have a script that includes a JavaScript file. Your path and name of file can be whatever you like, but do create a JavaScript file and include it.
+
 2. 
+
+```javascript
+//---// Data needed to Create SESSION. IMPORTANT to pull token from response //---//
+var session = {
+  "url": "https://ws.skdata.cloud/fmi/data/v1/databases/WSdummydb/sessions",
+  "method": "POST",
+  "headers": {
+    "Content-Type": "application/json",
+    "Authorization": "Basic YWRtaW46YWRtaW4="
+  }
+}
+
+$( "form" ).submit(function( event ) {
+  // console.log( $( this ).serializeArray() );
+  event.preventDefault();
+
+var num = 0
+function x() {
+  return num++;
+
+
+}
+  var email = $( this ).serializeArray()[x()].value;
+  // var password = $( this ).serializeArray()[x()].value;
+
+
+
+
+  // console.log(email);
+  // console.log(password);
+
+  //---// Ajax makes request and gives response then pulls token from response) //---//
+  $.ajax(session).done(function (response) {
+    token = (response.response.token);
+
+  //---// Data needed to GET records //---//
+    var customerList = {
+      "url": "https://ws.skdata.cloud/fmi/data/v1/databases/WSdummydb/layouts/CustomerDetails/records",
+      "method": "Get",
+      "headers": {
+        "Content-Type": "application/json"
+
+      }
+    }
+  //---// Insert correct Authorization into header of eventRecords "Bearer token" //---//
+  customerList.headers.Authorization = "Bearer " + token;
+
+  //---// Ajax makes request for Event records) //---//
+    $.ajax(customerList).done(function (response) {
+      var data = (response.response.data)
+
+
+    for (var i = 0; i < data.length; i++) {
+      if (email.toUpperCase() == data[i].fieldData.Email.toUpperCase() ) {
+        // console.log(data[i].fieldData.Email);
+        var id = response.response.data[i].recordId;
+        // console.log("RecordID = " + id);
+
+        // localStorage.setItem("id",id);
+        // window.open("./page.html", "_self");
+
+        localStorage.setItem("id",id);
+        window.open("./CustomerWebDirect.html", "_self")
+        break;
+      }
+      else {
+        console.log("nope");
+        if(i == data.length - 1){
+          console.log("stopped");
+          const messages = document.getElementById('messages');
+          messages.textContent = "Wrong Email";
+        };
+      }
+
+    }
+
+        })
+
+
+      });
+
+
+  });
+
+```
