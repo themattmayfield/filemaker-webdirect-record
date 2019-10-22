@@ -30,7 +30,10 @@ First I will give the basic steps needed to go to a specific record from an HTML
 ### Basic Steps
 1. In Filemaker go to Manage Scripts / Scripts Workspace and create a new script.
 
-2. In your HTML page, link to the newly created Filemaker script:
+2. In Filemaker go to Manage Database and create a new field in the table associated with your layout. Call The field is just going to be a duplicate of the RecordID. Here is exactly what it should look like, but you can call the field whatever you liker.
+![Script](/img/database_field.png)
+
+3. In your HTML page, link to the newly created Filemaker script:
 - this is how the link is set up. 
 http://<host>/fmi/webd/<database name>[?script=<script name>[&param=<script parameter>]]
 - where <script parameter> = the Recordid you want to go to
@@ -38,12 +41,12 @@ http://<host>/fmi/webd/<database name>[?script=<script name>[&param=<script para
 This is directly from FileMaker WevDirect 18 Guide
 https://fmhelp.filemaker.com/docs/18/en/fmwd/#accessing_linking
   
-3. In Filemaker go to script you created.
+4. In Filemaker go to script you created.
 - below is an image of what should go into your script.
 - you can change and manipulate to match your environment, and situation, but this is a basic outline.
 ![Script](/img/go_to_record.png)
 
-4. As you can see this will get your id parameter from the url and go to that record.
+5. As you can see this will get your id parameter from the url and go to that record.
 
 ## How to get a users ID into the url to pass to filemaker.
 The most common reason someone wants to go to a specific record from an HTML page is that they have a login form and wants the user that logs in to go straight to the FileMaker record specific to them.
