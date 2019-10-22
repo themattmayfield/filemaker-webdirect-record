@@ -47,6 +47,8 @@ The most common reason someone wants to go to a specific record from an HTML pag
 
 ## Steps to get a users ID into the url to pass to filemaker.
 1. Create a form.
-- Like I said in the Thing to keep in mind section, I will only be using email because I am lazy.
-- Very basic example below:
+- like I said in the Thing to keep in mind section, I will only be using email because I am lazy.
+- here is a very basic example:
 ![login.png](/img/login.png)
+
+2. 
