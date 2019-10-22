@@ -55,8 +55,10 @@ The most common reason someone wants to go to a specific record from an HTML pag
 - this form has an email input and a submit button. Notice the form does not have an action or method.
 - also I have a script that includes a JavaScript file. Your path and name of file can be whatever you like, but do create a JavaScript file and include it.
 
-2. Below is what goes in the javascript file you just created. There are a few things I want to explain that took me a while to figure out.
-- 
+2. Below is what goes in the javascript file you just created. There are a few things I want to explain that took me a while to figure out. So PLEASE READ
+- where we create the variable session, make sure you fill out the url properly with the host being prefixed with "https://".
+- also in session.Authorization it is going to have the work Basic followed by the base64-encoded string of your account name and password of the database sepereated by a colon which looks like... "Basic accountname:password". So if your account name is "admin" and your password is "admin" your authorization should look like below. You can find out the base64-encoded string of your account name and password by some online converter. Documentation of this is in the FileMaker 18 DATA API Guide https://fmhelp.filemaker.com/docs/18/en/dataapi/#connect-database_log-in
+-
 
 ```javascript
 //---// Data needed to Create SESSION. IMPORTANT to pull token from response //---//
