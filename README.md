@@ -29,6 +29,5 @@ This is directly from FileMaker WevDirect 18 Guide
 https://fmhelp.filemaker.com/docs/18/en/fmwd/#accessing_linking
   
 3. In Filemaker go to script you created
-![GitHub Logo](/go_to_record.png)
-Format: ![Alt Text](url)
- 
+![Script](/go_to_record.png)
+
