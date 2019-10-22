@@ -34,6 +34,7 @@ First I will give the basic steps needed to go to a specific record from an HTML
 
 ![Script](/img/database_field.png)
 
+- If you are going to display the field in your layout, I usually turn browse mode off so the user cannot change the value.
 
 3. In your HTML page, link to the newly created Filemaker script:
 - this is how the link is set up. 
