@@ -2,9 +2,14 @@
 This is so far the easiest way to go to a specific record in FileMaker WebDirect from web application using Javascript.
 
 ## Table of Contents
-[What this solves?](#what-this-solves)
-[Prerequisites](#Prerequisites)
-
+- [What this solves?](#what-this-solves)
+- [Prerequisites](#Prerequisites)
+- [How to go to a specific record in Filemaker WebDirect from an HTML page](#How-to-go-to-a-specific-record-in-Filemaker-WebDirect-from-an-HTML-page)
+  - [Basic Steps](#Basic-Steps)
+- [How to get a users ID into the url to pass to filemaker](#How-to-get-a-users-ID-into-the-url-to-pass-to-filemaker)
+  - [Things to keep in mind](#Things-to-keep-in-mind)
+  - [Steps to get a users ID into the url to pass to filemaker](#Steps-to-get-a-users-ID-into-the-url-to-pass-to-filemaker)
+  
 ### What this solves?
 In a previous Filemaker verion, from an HTML page, we were able to link to a:
 - specific database
