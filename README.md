@@ -37,7 +37,7 @@ First I will give the basic steps needed to go to a specific record from an HTML
 - this is how the link is set up. 
 http://<host>/fmi/webd/<database name>[?script=<script name>[&param=<script parameter>]]
 - where <script parameter> = the Recordid you want to go to
-- if you want to know how to PUSH a Recordid into the script parameter click HERE.
+- if you want to know how to PUSH a Recordid into the script parameter click [Here](#How-to-get-a-users-ID-into-the-url-to-pass-to-filemaker).
 This is directly from FileMaker WevDirect 18 Guide
 https://fmhelp.filemaker.com/docs/18/en/fmwd/#accessing_linking
   
