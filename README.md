@@ -152,7 +152,7 @@ function x() {
 - when the user clicks submit with a valid email in the login.html, the JavaScript page will get the Filemaker ID associated with that email, and pass it to the new HTML page we just created.
 - what this page does is it sets the ID to a new variable, and we set the form action to go to the correct script where FIleMaker will be able to go to the correct record. Then automatically submits the form.
 - we discussed everything about scripts earlier assuming you read if not click HERE.
-- 
+
 ```html
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
@@ -178,3 +178,10 @@ document.getElementById('myForm').submit();
 </html>
 
 ```
+4. You are done!
+- Created a login form
+- JavaScript creates a FileMaker session that checks the credentials.
+- If credentials are good, it gets that users FileMaker RecordID associated with it.
+- Sends the ID to another form.
+- That form automatically submits and sends the ID to FilemakerScript.
+- Script handles everything and sends user to appropriate record in WebDirect.
