@@ -14,8 +14,9 @@ Now the only options available are linking to a database, or linking to a databa
 First I will give the basic steps needed to go to a specific record from an HTML page, then I will give a couple of examples incase you are using a FORM.
 
 ## Prerequisites
-1. filemaker
-2. html, js, css knowledge
+1. FileMaker Advanced 16,17, or 18
+2. Basic knowledge on JavaScript, HTML, CSS
+3. Basic FileMaker knowledge
 
 ## Basic Steps
 1. In Filemaker go to Manage Scripts / Scripts Workspace and create a new script.
@@ -28,6 +29,7 @@ http://<host>/fmi/webd/<database name>[?script=<script name>[&param=<script para
 This is directly from FileMaker WevDirect 18 Guide
 https://fmhelp.filemaker.com/docs/18/en/fmwd/#accessing_linking
   
-3. In Filemaker go to script you created
+3. In Filemaker go to script you created.
+- below is an image of what should go into your script.
 ![Script](/go_to_record.png)
 
